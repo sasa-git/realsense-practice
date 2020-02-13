@@ -36,14 +36,14 @@ try:
         depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
 
         # Stack both images horizontally
-        # images = np.hstack((color_image, depth_colormap))
+        images = np.hstack((color_image, depth_colormap))
         # images = np.hstack((depth_colormap))
         # images = np.hstack((color_image))
 
         # Show images
         cv2.namedWindow('RealSense', cv2.WINDOW_AUTOSIZE)
-        # cv2.imshow('RealSense', images)
-        cv2.imshow('RealSense', depth_image)
+        cv2.imshow('RealSense', images)
+        # cv2.imshow('RealSense', depth_image)
         # cv2.imshow('RealSense', depth_colormap)
 
         if cv2.waitKey(1) & 0xff == 27:
